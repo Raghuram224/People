@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/my_nav"
+	app:startDestination="@id/showPersonsFragment">
+
+	<fragment
+		android:id="@+id/showPersonsFragment"
+		android:name="com.example.everybody.fragments.ShowPersonsFragment"
+		android:label="fragment_show_persons"
+		tools:layout="@layout/fragment_show_persons" >
+		<action
+			android:id="@+id/action_to_person_details"
+			app:destination="@id/personDetailsFragment"
+			app:enterAnim="@android:anim/slide_in_left" />
+	</fragment>
+	<fragment
+		android:id="@+id/personDetailsFragment"
+		android:name="com.example.everybody.fragments.PersonDetailsFragment"
+		android:label="fragment_person_details"
+		tools:layout="@layout/fragment_person_details" >
+		<action
+			android:id="@+id/action_to_show_persons_fragment"
+			app:destination="@id/showPersonsFragment"
+			app:enterAnim="@android:anim/slide_in_left" />
+		<action
+			android:id="@+id/action_personDetailsFragment_to_weatherReportFragment"
+			app:destination="@id/weatherReportFragment"
+			app:enterAnim="@android:anim/slide_in_left" />
+	</fragment>
+	<fragment
+		android:id="@+id/weatherReportFragment"
+		android:name="com.example.everybody.fragments.WeatherReportFragment"
+		android:label="fragment_weather_report"
+		tools:layout="@layout/fragment_weather_report" >
+		<action
+			android:id="@+id/from_weatherReportFragment_to_personDetailsFragment"
+			app:destination="@id/personDetailsFragment"
+			app:enterAnim="@android:anim/slide_in_left" />
+	</fragment>
+</navigation>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+	<data>
+		<variable
+			name="weather_report"
+			type="com.example.everybody.fragments.WeatherReportFragment" />
+
+	</data>
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".fragments.WeatherReportFragment"
+		android:background="@drawable/weather_bg">
+
+		<ImageView
+			android:id="@+id/back_btn_weather"
+			android:layout_width="60dp"
+			android:layout_height="60dp"
+			android:src="@drawable/arrow_left"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			android:layout_margin="16dp"/>
+
+		<TextView
+			android:id="@+id/temp_c"
+			style="@style/weather_style"
+			android:layout_width="150dp"
+			android:layout_height="100dp"
+			android:gravity="center"
+			android:text="29c"
+			android:textColor="@color/white"
+			app:layout_constraintBottom_toTopOf="@+id/climate"
+			app:layout_constraintEnd_toEndOf="@+id/climate"
+			app:layout_constraintStart_toStartOf="@+id/climate"
+			android:layout_marginBottom="8dp">
+
+		</TextView>
+
+		<TextView
+			android:id="@+id/climate"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:text="climate"
+			app:layout_constraintBottom_toTopOf="@+id/weather_icon"
+			app:layout_constraintEnd_toEndOf="@+id/weather_icon"
+			app:layout_constraintStart_toStartOf="@+id/weather_icon"
+			android:textSize="30sp"
+			android:textColor="@color/white"
+			android:gravity="center"
+			android:layout_margin="8dp">
+
+		</TextView>
+
+		<ImageView
+			android:id="@+id/weather_icon"
+			android:layout_width="150dp"
+			android:layout_height="150dp"
+			android:src="@drawable/weather_img"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+
+		</ImageView>
+
+		<TextView
+			android:id="@+id/humidity"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="humidity 94%"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/weather_icon"
+			style="@style/weather_reports_style">
+
+		</TextView>
+
+		<TextView
+			android:id="@+id/wind_speed"
+			style="@style/weather_reports_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="wind speed 10.5 mph"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/humidity"
+			android:layout_marginTop="16dp"/>
+
+		<TextView
+			android:id="@+id/textView2"
+			style="@style/weather_reports_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Air Quality"
+			android:textStyle="bold"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/wind_speed">
+
+		</TextView>
+
+		<TextView
+			android:id="@+id/air_quality_details"
+			style="@style/weather_reports_style"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="air quality details"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+		</TextView>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
